@@ -1,14 +1,15 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include "ASpell.hpp"
+#include<string>
+#include<iostream>
+#include "ATarget.hpp"
+
+class ATarget;
 
 class Fireball : public ASpell
 {
-	public:
-		Fireball();
-		~Fireball();
-
-		virtual ASpell	*clone() const;
+    public:
+        Fireball();
+        virtual ~Fireball();
+        virtual Fireball *clone() const;
 };

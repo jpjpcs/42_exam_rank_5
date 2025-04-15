@@ -1,14 +1,15 @@
 #pragma once
 
-#include <iostream>
-#include <string>
+#include<string>
+#include<iostream>
 #include "ATarget.hpp"
+
+class ATarget;
 
 class Dummy : public ATarget
 {
-	public:
-		Dummy();
-		~Dummy();
-
-		virtual ATarget	*clone() const;
+    public:
+        Dummy();
+        virtual ~Dummy();
+        virtual Dummy *clone() const;
 };

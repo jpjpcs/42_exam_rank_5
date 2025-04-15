@@ -1,14 +1,15 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include "ASpell.hpp"
+#include<string>
+#include<iostream>
+#include "ATarget.hpp"
+
+class ATarget;
 
 class Polymorph : public ASpell
 {
-	public:
-		Polymorph();
-		~Polymorph();
-
-		virtual ASpell	*clone() const;
+    public:
+        Polymorph();
+        virtual ~Polymorph();
+        virtual Polymorph *clone() const;
 };

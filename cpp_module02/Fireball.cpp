@@ -2,9 +2,10 @@
 
 Fireball::Fireball() : ASpell("Fireball", "burnt to a crisp"){}
 
-Fireball::~Fireball(){}
-
-ASpell	*Fireball::clone() const
+Fireball::~Fireball()
 {
-	return (new Fireball());
+}
+Fireball *Fireball::clone() const
+{
+    return(new Fireball());
 }

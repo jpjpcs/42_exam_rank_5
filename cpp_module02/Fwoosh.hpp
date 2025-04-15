@@ -1,14 +1,15 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include "ASpell.hpp"
+#include<string>
+#include<iostream>
+#include "ATarget.hpp"
+
+class ATarget;
 
 class Fwoosh : public ASpell
 {
-	public:
-		Fwoosh();
-		~Fwoosh();
-
-		virtual ASpell	*clone() const;
+    public:
+        Fwoosh();
+        virtual ~Fwoosh();
+        virtual Fwoosh *clone() const;
 };

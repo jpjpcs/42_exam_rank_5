@@ -2,9 +2,10 @@
 
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed"){}
 
-Fwoosh::~Fwoosh(){}
-
-ASpell	*Fwoosh::clone() const
+Fwoosh::~Fwoosh()
 {
-	return (new Fwoosh());
+}
+Fwoosh *Fwoosh::clone() const
+{
+    return(new Fwoosh());
 }
