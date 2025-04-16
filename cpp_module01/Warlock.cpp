@@ -28,7 +28,7 @@ Warlock::~Warlock()
         delete it->second;
     }
     spells.clear();
-}
+ }
 
 std::string const &Warlock::getName() const
 {

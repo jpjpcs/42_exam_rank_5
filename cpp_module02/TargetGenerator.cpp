@@ -43,6 +43,6 @@ void TargetGenerator::forgetTargetType(std::string const &target)
 ATarget* TargetGenerator::createTarget(std::string const &target)
 {
     if(targets.count(target))
-        return(targets[target]);
+        return(targets[target]->clone());
     return(NULL);
 }

@@ -1,4 +1,4 @@
-/* #include "Warlock.hpp"
+#include "Warlock.hpp"
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
 #include "BrickWall.hpp"
@@ -33,9 +33,10 @@ int main()
 
   delete fireball;
   delete polymorph;
-} */
+  delete wall;
+} 
 
-
+/*
 #include "Warlock.hpp"
 #include "Dummy.hpp"
 #include "Fwoosh.hpp"
@@ -141,4 +142,4 @@ int main() {
 	std::cout << "All tests completed successfully." << std::endl;
 
 	return 0;
-}
+}*/
