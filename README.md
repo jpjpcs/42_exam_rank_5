@@ -58,7 +58,7 @@ Implementation example:
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
 ASpell* Fwoosh::clone() const { return new Fwoosh(); }
 
-🔹 Dummy
+#### 🔹 Dummy
 Similar to Fwoosh, but inherits from ATarget.
 
 ➡️ Both Fwoosh and Dummy are derived classes.
@@ -67,8 +67,10 @@ Similar to Fwoosh, but inherits from ATarget.
 Fwoosh is just ASpell with fewer things and using "public ASpell" after "class Fwoosh" in the hpp file, and with "Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed" in the cpp and a clone. DUMMY IS THE SAME but referring to the ATARGET class. BOTH ARE inherited Classes.
 
 
-📙 CPP02
-Exercise 02
+## 📙 CPP02
+
+#### Exercise 02
+
 This exercise also consists of five main components:
 
 1. Fireball and Polymorph classes
@@ -81,13 +83,13 @@ This exercise also consists of five main components:
 
 5. TargetGenerator class
 
-🔹 Fireball & Polymorph
+#### 🔹 Fireball & Polymorph
 Both are copies of Fwoosh, with different names and string values.
 
-🔹 BrickWall
+#### 🔹 BrickWall
 A copy of Dummy.
 
-🔹 SpellBook
+#### 🔹 SpellBook
 A copy of the Warlock class.
 
 Use Ctrl + Shift + L to replace "Warlock" with "SpellBook".
@@ -104,7 +106,7 @@ ASpell* SpellBook::createSpell(std::string const &spell) {
 }
 
 
-🔹 Warlock Modifications
+#### 🔹 Warlock Modifications
 Update to work seamlessly with SpellBook and the new spells, calling learnSpell and forgetSpell of the SpellBook in the Warlock learnSpell and forgetSpell functions, and
 changing launchSpell to use createSpell:
 
@@ -118,7 +120,7 @@ void Warlock::launchSpell(std::string const &spell, ATarget &target)
     }
 }
 
-🔹 TargetGenerator
+#### 🔹 TargetGenerator
 A copy of SpellBook, with:
 
 spells ➜ targets
@@ -138,26 +140,26 @@ Change getName for getType otherwise you will have a compilation error, because 
 
 # 🧙‍♂️ C++ Module DETAILED Guide
 
-# 📦 C++ Module 00 - Warlock Class
+## 📦 C++ Module 00 - Warlock Class
 
-## 🧙 Assignment Name
+### 🧙 Assignment Name
 **cpp_module_00**
 
-## 📁 Expected Files
+### 📁 Expected Files
 - `Warlock.hpp`
 - `Warlock.cpp`
 
 ---
 
-## 📖 Exercise Objective
+### 📖 Exercise Objective
 
 In this exercise, the student must implement a `Warlock` class in C++, following the **Coplien's form**. The goal is to practice **encapsulation**, **constructors and destructors**, **copy prevention**, and overall good **object-oriented design** principles.
 
 ---
 
-## 🧠 Key Theoretical Concepts Covered
+### 🧠 Key Theoretical Concepts Covered
 
-### ✅ Coplien's Form (The Rule of Three)
+#### ✅ Coplien's Form (The Rule of Three)
 - Implementation of:
   - **Custom constructor** that requires parameters.
   - **Destructor** that prints a message when called.
@@ -165,32 +167,32 @@ In this exercise, the student must implement a `Warlock` class in C++, following
     - The **copy constructor**
     - The **copy assignment operator**
 
-### ✅ Encapsulation
+#### ✅ Encapsulation
 - Private attributes (`name`, `title`)
 - Controlled access via **getters**:
   - `getName()` and `getTitle()` return a constant reference to a string.
 - Controlled modification via **setter**:
   - `setTitle()` updates the warlock’s title.
 
-### ✅ Const-Correctness
+#### ✅ Const-Correctness
 - Ensure that methods not modifying the object are marked as `const`.
 - Getters and `introduce()` must be callable on `const` Warlocks.
 
-### ✅ Custom Messages on Lifecycle Events
+#### ✅ Custom Messages on Lifecycle Events
 - Upon creation:
 <NAME>: This looks like another boring day.
 - Upon destruction:
 <NAME>: My job here is done!
 
 
-### ✅ Operation Restrictions
+#### ✅ Operation Restrictions
 - The class must **not allow**:
 - Instantiation without parameters.
 - Copying or assigning Warlock objects.
 
 ---
 
-## 🧪 Example Behavior
+### 🧪 Example Behavior
 
 ```cpp
 int main()
@@ -223,7 +225,7 @@ Richard: My job here is done!
 ```
 
 
-## 🎯 What the Student Should Learn
+### 🎯 What the Student Should Learn
 Understanding and application of Coplien’s form in C++.
 
 How to delete copy constructors and assignment operators to prevent object copying.
@@ -246,12 +248,12 @@ Applying these principles confidently in exams and future projects.
 
 
 
-# 📦 C++ Module 01 - Spellcasting System
+## 📦 C++ Module 01 - Spellcasting System
 
-## 🧙 Assignment Name
+### 🧙 Assignment Name
 **cpp_module_01**
 
-## 📁 Expected Files
+### 📁 Expected Files
 
 - `Warlock.hpp`, `Warlock.cpp`
 - `ASpell.hpp`, `ASpell.cpp`
@@ -261,7 +263,7 @@ Applying these principles confidently in exams and future projects.
 
 ---
 
-## 📖 Exercise Objective
+### 📖 Exercise Objective
 
 This module builds upon the previous one by introducing **abstract classes**, **inheritance**, **polymorphism**, and **dynamic object behavior**. The student is expected to implement a small spellcasting system using proper **object-oriented programming (OOP)** techniques in C++.
 
@@ -269,25 +271,25 @@ This module builds upon the previous one by introducing **abstract classes**, **
 
 ---
 
-## 🧠 Key Theoretical Concepts Covered
+### 🧠 Key Theoretical Concepts Covered
 
-### ✅ Abstract Classes and Polymorphism
+#### ✅ Abstract Classes and Polymorphism
 
 - `ASpell` and `ATarget` are **abstract base classes**.
 - Both must implement a `clone()` **pure virtual function** to enable polymorphic copying.
 
-### ✅ Coplien's Form (Rule of Three)
+#### ✅ Coplien's Form (Rule of Three)
 
 - Each class must follow **Coplien’s form**:
   - Proper constructor(s)
   - Destructor
   - Copy constructor and assignment operator (if needed)
 
-### ✅ Const-Correctness
+#### ✅ Const-Correctness
 
 - All getters and polymorphic methods must be callable on `const` objects.
 
-### ✅ Encapsulation and Class Design
+#### ✅ Encapsulation and Class Design
 
 - `ASpell` holds:
   - `name` and `effects`
@@ -296,7 +298,7 @@ This module builds upon the previous one by introducing **abstract classes**, **
   - `type`
   - `getType()`, `getHitBySpell()`
 
-### ✅ Concrete Implementations
+#### ✅ Concrete Implementations
 
 - `Fwoosh`: a concrete spell class (`ASpell`) with:
   - Name: `"Fwoosh"`
@@ -306,7 +308,7 @@ This module builds upon the previous one by introducing **abstract classes**, **
   - Type: `"Target Practice Dummy"`
   - `clone()` returns `new Dummy()`
 
-### ✅ Warlock Spell System
+#### ✅ Warlock Spell System
 
 - `Warlock` must manage learned spells:
   - `learnSpell(ASpell*)` – copies and stores the spell
@@ -316,7 +318,7 @@ This module builds upon the previous one by introducing **abstract classes**, **
 
 ---
 
-## 🧪 Example Behavior
+### 🧪 Example Behavior
 
 ```cpp
 int main()
@@ -349,7 +351,7 @@ Richard: My job here is done!
 ´´´
 
 
-## 🎯 Learning Outcomes
+### 🎯 Learning Outcomes
 By completing this module, students should:
 
 Understand and apply abstract classes and pure virtual functions in C++.
@@ -374,12 +376,12 @@ Build scalable and modular code that reflects solid OOP practices.
 
 
 
-# 📦 C++ Module 02 - Spellbook & Target System
+## 📦 C++ Module 02 - Spellbook & Target System
 
-## 🧙 Assignment Name
+### 🧙 Assignment Name
 **cpp_module_02**
 
-## 📁 Expected Files
+### 📁 Expected Files
 
 - `Warlock.hpp`, `Warlock.cpp`
 - `ASpell.hpp`, `ASpell.cpp`
@@ -394,7 +396,7 @@ Build scalable and modular code that reflects solid OOP practices.
 
 ---
 
-## 📖 Exercise Objective
+### 📖 Exercise Objective
 
 In this module, the spellcasting system introduced in previous exercises is expanded. The goal is to consolidate understanding of:
 
@@ -408,9 +410,9 @@ In this module, the spellcasting system introduced in previous exercises is expa
 
 ---
 
-## 🧠 Key Theoretical Concepts Covered
+### 🧠 Key Theoretical Concepts Covered
 
-### ✅ Concrete Spell and Target Classes
+#### ✅ Concrete Spell and Target Classes
 
 You must implement two new spells and one new target:
 
@@ -422,7 +424,7 @@ Each must override `clone()` and follow the same structure as `Fwoosh` and `Dumm
 
 ---
 
-### ✅ SpellBook Class (Factory + Container)
+#### ✅ SpellBook Class (Factory + Container)
 
 - Must follow **canonical form**.
 - Cannot be copied.
@@ -433,7 +435,7 @@ Each must override `clone()` and follow the same structure as `Fwoosh` and `Dumm
 
 ---
 
-### ✅ Warlock Enhancements
+#### ✅ Warlock Enhancements
 
 - The `Warlock` now **contains a SpellBook**.
 - `learnSpell`, `forgetSpell`, and `launchSpell` must delegate to the `SpellBook`.
@@ -441,7 +443,7 @@ Each must override `clone()` and follow the same structure as `Fwoosh` and `Dumm
 
 ---
 
-### ✅ TargetGenerator Class (Target Factory)
+#### ✅ TargetGenerator Class (Target Factory)
 
 - Also follows **canonical form** and is **non-copyable**.
 - Responsibilities:
@@ -451,7 +453,7 @@ Each must override `clone()` and follow the same structure as `Fwoosh` and `Dumm
 
 ---
 
-## 🧪 Example Behavior
+### 🧪 Example Behavior
 
 ```cpp
 int main()
@@ -491,7 +493,7 @@ Inconspicuous Red-brick Wall has been burnt to a crisp!
 Richard: My job here is done!
 ´´´
 
-## 🎯 Learning Outcomes
+### 🎯 Learning Outcomes
 By completing this module, students will:
 
 Practice and apply polymorphism with abstract classes and virtual functions.
