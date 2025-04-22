@@ -41,7 +41,7 @@ This exercise can be broken down into **five parts**:
 
 - It is essentially a **copy** of the `Warlock` class.
 - Use `Ctrl + Shift + L` (or right-click > "Change All Occurrences") in Visual Studio to quickly replace all instances of `"Warlock"` with `"ASpell"`.
-- Move the **default constructor**, **copy constructor**, **assignment operator**, and the `launch()` method to the **public** section.
+- Move the **default constructor**, **copy constructor**, **assignment operator**, and create the `launch()` method to the **public** section.
 
 #### 🔹 ATarget
 
@@ -71,15 +71,15 @@ Fwoosh is just ASpell with fewer things and using "public ASpell" after "class F
 Exercise 02
 This exercise also consists of five main components:
 
-Fireball and Polymorph classes
+1. Fireball and Polymorph classes
 
-BrickWall class
+2. BrickWall class
 
-SpellBook class
+3. SpellBook class
 
-Warlock class modifications
+4. Warlock class modifications
 
-TargetGenerator class
+5. TargetGenerator class
 
 🔹 Fireball & Polymorph
 Both are copies of Fwoosh, with different names and string values.
