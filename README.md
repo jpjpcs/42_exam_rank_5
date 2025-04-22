@@ -336,20 +336,16 @@ int main()
   richard.forgetSpell("Fwoosh");
   richard.launchSpell("Fwoosh", bob);
 
-
   // WE MUST INCLUDE THIS IN THE MAIN GIVEN IN THE SUBJECT. Otherwise will return MEMORY LEAKS:
 delete fwoosh;
 }
-
 
 💡 Expected Output
 Richard: This looks like another boring day.
 Richard: I am Richard, the Titled!
 Target Practice Dummy has been fwooshed!
 Richard: My job here is done!
-
-´´´
-
+```
 
 ### 🎯 Learning Outcomes
 By completing this module, students should:
@@ -491,7 +487,7 @@ Richard: I am Richard, Hello, I'm Richard the Warlock!!
 Inconspicuous Red-brick Wall has been turned into a critter!
 Inconspicuous Red-brick Wall has been burnt to a crisp!
 Richard: My job here is done!
-´´´
+```
 
 ### 🎯 Learning Outcomes
 By completing this module, students will:
