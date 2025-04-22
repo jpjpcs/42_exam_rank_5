@@ -6,6 +6,25 @@ The rank 5 exam is composed by 3 different questions/three modules:
 2. **Module 01**: Introduces the Warlock class, along with spells and targets, and covers concepts such as polymorphism and abstract classes. [Module 01](https://github.com/jpjpcs/42_exam_rank_5/tree/main/cpp_module01)
 3. **Module 02**: Expands on the Warlock class with a SpellBook and TargetGenerator, and introduces new spells and targets. [Module 02](https://github.com/jpjpcs/42_exam_rank_5/tree/main/cpp_module02)
 
+ADVICE: MY ADVICE STRATEGY IS TO DO THE EXAM JUST BY FOLLOWING THE SUBJECT AND WHAT´S ASKED IN THE SUBJECT.
+### CPP00 
+- IN CASE OF EX00 WE DON´T NEED TO USE COPY CONSTRUCTOR AND ASSIGNMENT OPERATOR, but we should once it´s a good practice. IN CASE OF EX00 WE JUST NEED TO CREATE A WARLOCK CLASS WITH PRIVATE ELEMENTS (INCLUDING COPY CONSTRUCTOR AND ASSIGNMENT OPERATOR TO AVOID COPY OR INSTANTIATION BY COPY).
+### CPP01
+- IN CASE OF EX01, I DIVIDED MY SUBJECT INTO 5 POINTS THAT WERE ASKED: 1.ASpell CLASS, 2.ATarget CLASS, 3.Fwoosh, 4.Dummy, AND 5.Warlock ALTERATIONS. 
+ASPELL CLASS IS "A COPY" OF WARLOCK...WE JUST NEED TO CHANGE SOMETHINGS. To do that, just use "ctrl + shift + L" in visual studio (or right click on the mouse and choose "change all occurrences") after selecting the word to substitute. ASPELL IS A "COPY" OF WARLOCK, only changing all occurrences of Warlock for ASpell and putting pattern and copy constructor, and assignment operator the  public side, as well as including the launch function. ATarget is "copy" of ASpell, changing all occurrences of ASpell and substituting the launch function for getHitBySpell. 
+FWOOSH is just ASPELL with fewer things and using "public ASpell" after "class Fwoosh" in the hpp file, and with "Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed" in the cpp and a clone. DUMMY IS THE SAME but referring to the ATARGET class. BOTH ARE inherited Classes.
+### CPP02
+- IN CASE OF EX02, I DIVIDED MY SUBJECT INTO 5 POINTS THAT WERE ASKED: 1.Fireball and Polymorph CLASSES, 2.BrickWall CLASS, 3.SpellBook, 4.Warlock modifications, AND 5.TargetGenerator Class.
+Fireball and Polymorph are "copy" of Fwoosh. BrickWall is a "copy" of Dummy. 
+SPELLBOOK is a copy of Warlock with "ctrl + shift + L" in some parameters (change name of Warlock to SpellBook and erase unnecessary functions such as the  parametrized constructor and put the pattern constructor in the public parameters, changing also the createSpell for:
+ASpell *SpellBook::createSpell(std::string const &spell)
+{
+    if(spells.count(spell))
+        return(spells[spell]->clone());
+    return(NULL);
+}) 
+
+TARGETGENERATOR a copy of SpellBook changing the name of "spells for targets" and "spell for target", also changing ASpell for ATArget, and learnSpell/forgetSpell/createSpell for learnTargetType/forgetTargetType/createTarget).
 
 
 
