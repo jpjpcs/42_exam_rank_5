@@ -8,6 +8,8 @@ The rank 5 exam is composed by 3 different questions/three modules:
 
 
 
+
+
 # 📦 C++ Module 00 - Warlock Class
 
 ## 🧙 Assignment Name
@@ -106,6 +108,11 @@ Practicing clean and safe object-oriented programming.
 
 Applying these principles confidently in exams and future projects.
 
+
+
+
+
+----------------------------------------
 
 
 
@@ -211,6 +218,9 @@ Richard: I am Richard, the Titled!
 Target Practice Dummy has been fwooshed!
 Richard: My job here is done!
 
+´´´
+
+
 ## 🎯 Learning Outcomes
 By completing this module, students should:
 
@@ -226,6 +236,11 @@ Store and manage dynamic objects using standard containers and appropriate memor
 
 Build scalable and modular code that reflects solid OOP practices.
 
+
+
+
+
+----------------------------------------
 
 
 
@@ -346,7 +361,7 @@ Richard: I am Richard, Hello, I'm Richard the Warlock!!
 Inconspicuous Red-brick Wall has been turned into a critter!
 Inconspicuous Red-brick Wall has been burnt to a crisp!
 Richard: My job here is done!
-
+´´´
 
 ## 🎯 Learning Outcomes
 By completing this module, students will:
