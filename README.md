@@ -45,7 +45,7 @@ This exercise can be broken down into **five parts**:
 
 #### 🔹 ATarget
 
-- A **copy** of `ASpell`, replacing all occurrences of `"ASpell"` with `"ATarget"`.
+- A **copy** of `ASpell`, replacing all occurrences of `"ASpell"` with `"ATarget"`, deleting effects and changing "name for type" and getName for getType.
 - Replace the `launch()` method with `getHitBySpell()`.
 
 #### 🔹 Fwoosh
@@ -96,7 +96,7 @@ Remove unnecessary functions such as the parameterized constructor.
 
 Make the default constructor public.
 
-Implement the createSpell() function like this:
+Implement the createSpell() function like this (with a clone like is asked in the subject):
 ASpell* SpellBook::createSpell(std::string const &spell) {
     if (spells.count(spell))
         return spells[spell]->clone();
@@ -105,7 +105,18 @@ ASpell* SpellBook::createSpell(std::string const &spell) {
 
 
 🔹 Warlock Modifications
-Update to work seamlessly with SpellBook and the new spells.
+Update to work seamlessly with SpellBook and the new spells, calling learnSpell and forgetSpell of the SpellBook in the Warlock learnSpell and forgetSpell functions, and
+changing launchSpell to use createSpell:
+
+void Warlock::launchSpell(std::string const &spell, ATarget &target)
+{
+    ASpell *newspell = spells.createSpell(spell);
+    if(newspell)
+    {
+        newspell->launch(target);
+        delete newspell;
+    }
+}
 
 🔹 TargetGenerator
 A copy of SpellBook, with:
@@ -122,6 +133,7 @@ forgetSpell() ➜ forgetTargetType()
 
 createSpell() ➜ createTarget()
 
+Change getName for getType otherwise you will have a compilation error, because getName doesn´t exist in ATarget (instead it´s getType).
 
 
 # 🧙‍♂️ C++ Module DETAILED Guide
