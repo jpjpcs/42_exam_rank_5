@@ -6,7 +6,7 @@ The rank 5 exam is composed by 3 different questions/three modules:
 2. **Module 01**: Introduces the Warlock class, along with spells and targets, and covers concepts such as polymorphism and abstract classes. [Module 01](https://github.com/jpjpcs/42_exam_rank_5/tree/main/cpp_module01)
 3. **Module 02**: Expands on the Warlock class with a SpellBook and TargetGenerator, and introduces new spells and targets. [Module 02](https://github.com/jpjpcs/42_exam_rank_5/tree/main/cpp_module02)
 
-ADVICE: MY ADVICE STRATEGY IS TO DO THE EXAM JUST BY FOLLOWING THE SUBJECT AND WHAT´S ASKED IN THE SUBJECT.
+## ADVICE: MY ADVICE STRATEGY IS TO DO THE EXAM JUST BY FOLLOWING THE SUBJECT AND WHAT´S ASKED IN THE SUBJECT.
 ### CPP00 
 - IN CASE OF EX00 WE DON´T NEED TO USE COPY CONSTRUCTOR AND ASSIGNMENT OPERATOR, but we should once it´s a good practice. IN CASE OF EX00 WE JUST NEED TO CREATE A WARLOCK CLASS WITH PRIVATE ELEMENTS (INCLUDING COPY CONSTRUCTOR AND ASSIGNMENT OPERATOR TO AVOID COPY OR INSTANTIATION BY COPY).
 ### CPP01
