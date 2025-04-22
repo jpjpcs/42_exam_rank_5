@@ -90,7 +90,7 @@ Jack: I am Jack, the Mighty!
 Jack: My job here is done!
 Richard: My job here is done!
 
-```cpp
+```
 
 
 ## 🎯 What the Student Should Learn
