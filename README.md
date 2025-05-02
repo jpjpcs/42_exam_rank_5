@@ -43,6 +43,7 @@ This exercise can be broken down into **five parts**:
 - Use `Ctrl + Shift + L` (or right-click > "Change All Occurrences") in Visual Studio to quickly replace all instances of `"Warlock"` with `"ASpell"`.
 - Move the **default constructor**, **copy constructor**, **assignment operator**, and create the `launch()` method to the **public** section.
 - ASpell will inherit to Fwoosh, so we use virtual in the destructor, to allow that the destructor of the son could be used instead of the one that belongs to the father (in this case ASpell). This prevents memory leaks, as well as allows the creation of customized phrases when the son it´s destroyed. 
+We don´t need to put virtual in the son's classes once we put it in the mother´s one.
 
 ```cpp 
 virtual ~ASpell();
@@ -63,7 +64,8 @@ void launch (ATarget const &target);
 
 - A **copy** of `ASpell`, replacing all occurrences of `"ASpell"` with `"ATarget"`, deleting effects and changing "name for type" and getName for getType.
 - Replace the `launch()` method with `getHitBySpell()`.
-- ATarget will inherit to Dummy, so we use virtual in the destructor, to allow that the destructor of the son could be used instead of the one that belongs to the father (in this case ATarget). This prevents memory leaks, as well as allows the creation of customized phrases when the son it´s destroyed. 
+- ATarget will inherit to Dummy, so we use virtual in the destructor, to allow that the destructor of the son could be used instead of the one that belongs to the father (in this case ATarget). This prevents memory leaks, as well as allows the creation of customized phrases when the son it´s destroyed.
+We don´t need to put virtual in the son's classes once we put it in the mother´s one.
 
 ```cpp 
 virtual ~ATarget();
