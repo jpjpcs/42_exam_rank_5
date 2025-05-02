@@ -42,11 +42,45 @@ This exercise can be broken down into **five parts**:
 - It is essentially a **copy** of the `Warlock` class.
 - Use `Ctrl + Shift + L` (or right-click > "Change All Occurrences") in Visual Studio to quickly replace all instances of `"Warlock"` with `"ASpell"`.
 - Move the **default constructor**, **copy constructor**, **assignment operator**, and create the `launch()` method to the **public** section.
+- ASpell will inherit to Fwoosh, so we use virtual in the destructor, to allow that the destructor of the son could be used instead of the one that belongs to the father (in this case ASpell). 
+
+```cpp 
+virtual ~ASpell();
+````
+
+- Also, the clone function needs to be virtual. Otherwise, it will give a compiler error. And why? Because the clone will be implemented by the son classes.
+
+```cpp
+virtual ASpell *clone const() = 0;
+``` 
+- We also need to declare class ATarget before implementing the ASPell class in the ASpell.hpp file, to allow the compiler to know that we are invoking that class before using it in the launch function.
+
+```cpp
+void launch (ATarget const &target);
+```
 
 #### 🔹 ATarget
 
 - A **copy** of `ASpell`, replacing all occurrences of `"ASpell"` with `"ATarget"`, deleting effects and changing "name for type" and getName for getType.
 - Replace the `launch()` method with `getHitBySpell()`.
+- ATarget will inherit to Dummy, so we use virtual in the destructor, to allow that the destructor of the son could be used instead of the one that belongs to the father (in this case ATarget). 
+
+```cpp 
+virtual ~ATarget();
+````
+
+- Also, the clone function needs to be virtual. Otherwise, it will give a compiler error. And why? Because the clone will be implemented by the son classes.
+
+```cpp
+virtual ATarget *clone const() = 0;
+``` 
+
+- We also need to declare the class ASPell before implementing the ATarget class in the ATarget.hpp file, to allow the compiler to know that we are invoking that class before using it in the getHitBySpell function.
+
+```cpp
+void getHitBySpell (ASpell const &spell) const;
+
+```
 
 #### 🔹 Fwoosh
 
@@ -60,6 +94,8 @@ Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
 ASpell* Fwoosh::clone() const { return new Fwoosh(); }
 ```
 
+- Don´t need to use virtual in the destructor once we are already using it in the mother class ASpell.
+
 #### 🔹 Dummy
 Similar to Fwoosh, but inherits from ATarget.
 
@@ -68,6 +104,8 @@ Similar to Fwoosh, but inherits from ATarget.
 
 Fwoosh is just ASpell with fewer things and using "public ASpell" after "class Fwoosh" in the hpp file, and with "Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed" in the cpp and a clone. DUMMY IS THE SAME but referring to the ATARGET class. BOTH ARE inherited Classes.
 
+
+- Don´t need to use virtual in the destructor once we are already using it in the mother class ATarget.
 
 ## 📙 CPP02
 
