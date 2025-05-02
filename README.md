@@ -55,6 +55,7 @@ This exercise can be broken down into **five parts**:
   class Fwoosh : public ASpell
 
 Implementation example:
+ ```cpp
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
 ASpell* Fwoosh::clone() const { return new Fwoosh(); }
 
