@@ -113,13 +113,29 @@ void getHitBySpell (ASpell const &spell) const;
 Implementation example:
  ```cpp
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
-ASpell* Fwoosh::clone() const { return new Fwoosh(); }
+
+ASpell* Fwoosh::clone() const 
+{ 
+  return new Fwoosh(); 
+}
 ```
 
 - Don´t need to use virtual in the destructor once we are already using it in the mother class ASpell.
 
 #### 🔹 Dummy
 Similar to Fwoosh, but inherits from ATarget.
+
+`cpp
+
+Dummy::Dummy() : ATarget("Target Practice Dummy"){}
+
+Dummy *Dummy::clone() const
+{
+    return(new Dummy());
+}
+
+````
+
 
 ➡️ Both Fwoosh and Dummy are derived classes.
 
