@@ -23,6 +23,22 @@ We simply need to create a `Warlock` class with **private attributes**, includin
 
 These are used to avoid copy construction or instantiation by copy.
 
+- #pragma once is the same as guards, but instead of putting 
+
+```cpp
+#ifndef NAME_OF_THE_GUARD 
+# define NAME_OF_THE_GUARD
+#endif
+````
+
+we just put
+
+```cpp
+#pragma once
+```
+
+#pragma once is functionally equivalent to include guards (#ifndef, #define, #endif), but it is a simpler and more modern approach to prevent multiple inclusions of a header file in C/C++. Both ensure that a file's content is included only once during compilation, preventing errors such as duplicate definitions.
+
 ---
 
 ## 📗 CPP01
@@ -168,8 +184,20 @@ This exercise also consists of five main components:
 #### 🔹 Fireball & Polymorph
 Both are copies of Fwoosh, with different names and string values.
 
+```cpp
+Fireball::Fireball() : ASpell("Fireball", "burnt to a crisp"){}
+```
+
+```cpp
+Polymorph::Polymorph() : ASpell("Polymorph", "turned into a critter"){}
+```
+
 #### 🔹 BrickWall
 A copy of Dummy.
+
+```cpp
+BrickWall::BrickWall() : ATarget("Inconspicuous Red-brick Wall"){}
+```
 
 #### 🔹 SpellBook
 A copy of the Warlock class.
@@ -187,6 +215,31 @@ ASpell* SpellBook::createSpell(std::string const &spell) {
     return NULL;
 }
 
+```cpp
+#pragma once
+
+#include<string>
+#include<iostream>
+#include <map>
+#include "ASpell.hpp"
+#include "ATarget.hpp"
+
+class SpellBook
+{
+    private:
+        std::map <std::string, ASpell *> spells;
+        
+        SpellBook(SpellBook const &other);
+        SpellBook &operator=(SpellBook const &other);
+
+    public:
+        SpellBook();
+        ~SpellBook();
+        void learnSpell (ASpell *spell);
+        void forgetSpell(std::string const &spell);
+        ASpell* createSpell(std::string const &spell);
+};
+```
 
 #### 🔹 Warlock Modifications
 Update to work seamlessly with SpellBook and the new spells, calling learnSpell and forgetSpell of the SpellBook in the Warlock learnSpell and forgetSpell functions, and
@@ -219,7 +272,31 @@ createSpell() ➜ createTarget()
 
 Change getName for getType otherwise you will have a compilation error, because getName doesn´t exist in ATarget (instead it´s getType).
 
+```cpp
+#pragma once
 
+#include<string>
+#include<iostream>
+#include <map>
+#include "ASpell.hpp"
+#include "ATarget.hpp"
+
+class TargetGenerator
+{
+    private:
+        std::map <std::string, ATarget *> targets;
+        
+        TargetGenerator(TargetGenerator const &other);
+        TargetGenerator &operator=(TargetGenerator const &other);
+
+    public:
+        TargetGenerator();
+        ~TargetGenerator();
+        void learnTargetType (ATarget *target);
+        void forgetTargetType(std::string const &target);
+        ATarget* createTarget(std::string const &target);
+};
+```
 # 🧙‍♂️ C++ Module DETAILED Guide
 
 ## 📦 C++ Module 00 - Warlock Class
