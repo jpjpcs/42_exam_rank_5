@@ -57,6 +57,14 @@ virtual ASpell *clone const() = 0;
 - We also need to declare class ATarget before implementing the ASPell class in the ASpell.hpp file, to allow the compiler to know that we are invoking that class before using it in the launch function.
 
 ```cpp
+
+class ATarget;
+
+class ASpell
+{
+...
+}
+
 void launch (ATarget const &target);
 ```
 
@@ -80,6 +88,14 @@ virtual ATarget *clone const() = 0;
 - We also need to declare the class ASPell before implementing the ATarget class in the ATarget.hpp file, to allow the compiler to know that we are invoking that class before using it in the getHitBySpell function.
 
 ```cpp
+
+class ASpell;
+
+class ATarget
+{
+...
+}
+
 void getHitBySpell (ASpell const &spell) const;
 
 ```
