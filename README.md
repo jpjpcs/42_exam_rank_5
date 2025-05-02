@@ -297,7 +297,7 @@ class TargetGenerator
         ATarget* createTarget(std::string const &target);
 };
 ```
-# 🧙‍♂️ C++ Module DETAILED Guide
+# 🧙‍♂️ C++ Module LEARNINGS
 
 ## 📦 C++ Module 00 - Warlock Class
 
