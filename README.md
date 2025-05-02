@@ -63,9 +63,11 @@ class ATarget;
 class ASpell
 {
 ...
-}
 
 void launch (ATarget const &target);
+
+}
+
 ```
 
 #### 🔹 ATarget
@@ -94,9 +96,11 @@ class ASpell;
 class ATarget
 {
 ...
-}
 
 void getHitBySpell (ASpell const &spell) const;
+
+}
+
 
 ```
 
