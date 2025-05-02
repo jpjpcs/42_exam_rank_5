@@ -57,7 +57,7 @@ This exercise can be broken down into **five parts**:
 Implementation example:
  ```cpp
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
-ASpell* Fwoosh::clone() const { return new Fwoosh(); }
+ASpell* Fwoosh::clone() const { return new Fwoosh(); } ```
 
 #### 🔹 Dummy
 Similar to Fwoosh, but inherits from ATarget.
