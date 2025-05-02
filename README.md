@@ -125,7 +125,17 @@ ASpell* Fwoosh::clone() const
 #### 🔹 Dummy
 Similar to Fwoosh, but inherits from ATarget.
 
-`cpp
+```cpp
+class Dummy : public ATarget
+```
+
+
+➡️ Both Fwoosh and Dummy are derived classes.
+
+
+Fwoosh is just ASpell with fewer things and using "public ASpell" after "class Fwoosh" in the hpp file, and with "Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed" in the cpp and a clone. DUMMY IS THE SAME but referring to the ATARGET class. BOTH ARE inherited Classes.
+
+```cpp
 
 Dummy::Dummy() : ATarget("Target Practice Dummy"){}
 
@@ -134,13 +144,7 @@ Dummy *Dummy::clone() const
     return(new Dummy());
 }
 
-````
-
-
-➡️ Both Fwoosh and Dummy are derived classes.
-
-
-Fwoosh is just ASpell with fewer things and using "public ASpell" after "class Fwoosh" in the hpp file, and with "Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed" in the cpp and a clone. DUMMY IS THE SAME but referring to the ATARGET class. BOTH ARE inherited Classes.
+```
 
 
 - Don´t need to use virtual in the destructor once we are already using it in the mother class ATarget.
